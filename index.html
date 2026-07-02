@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="행복한아빠 AI Lab은 Python, AI, 데이터 분석, 공공입찰 자동화 프로그램을 연구하고 제작하는 AI 자동화 연구소입니다."
+    />
+    <title>행복한아빠 AI Lab | AI 업무자동화 연구소</title>
+    <link rel="icon" type="image/png" href="assets/logo-mark.png" />
+    <link rel="preload" as="image" href="assets/hero-ai-lab-sharp.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#home" aria-label="행복한아빠 AI Lab 홈">
+        <img class="brand-logo" src="assets/felizpapa-header-logo.png" alt="" />
+        <span>
+          <strong>행복한아빠 AI Lab</strong>
+          <small>Felizpapa Automation Studio</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="주요 메뉴" data-nav>
+        <a href="#about">소개</a>
+        <a href="#projects">프로젝트</a>
+        <a href="#notes">개발일지</a>
+        <a href="#workshop">작업실</a>
+        <a href="#downloads">무료 프로그램</a>
+        <a href="#services">서비스</a>
+        <a href="#contact">문의</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-image" src="assets/hero-ai-lab-sharp.png" alt="AI 자동화 연구소 분위기의 밝은 업무 공간" onerror="this.style.display='none'" />
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Python · AI · 데이터 분석 · 공공입찰</p>
+          <h1 id="hero-title">AI로 반복업무를<br />자동화합니다.</h1>
+          <p class="hero-copy">
+            사람이 하던 일을 프로그램이 대신하도록 만드는 것이 목표입니다. 공공입찰 분석부터 엑셀 자동화,
+            데이터 수집, AI 추천 시스템까지 실무에 바로 쓰이는 도구를 만듭니다.
+          </p>
+          <div class="hero-actions" aria-label="빠른 이동">
+            <a class="button primary" href="#projects">프로젝트 보기</a>
+            <a class="button secondary" href="#downloads">무료 프로그램</a>
+            <a class="button ghost" href="#contact">문의하기</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="핵심 분야">
+        <span>공공입찰 AI</span>
+        <span>업무자동화</span>
+        <span>Python 프로그램 개발</span>
+        <span>데이터 분석</span>
+      </section>
+
+      <section class="section" id="about">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2>안녕하세요, '행복한아빠'입니다.</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              낮에는 나라장터(국가종합전자조달)에서 입찰 업무를 하는 직장인이고, 저녁에는 Python과 AI로
+              업무 자동화를 연구하고 Unity로 게임을 만드는 취미 개발자입니다. 입찰은 여러 건의 낙찰 경험이 있고,
+              프로그래밍은 C#으로 게임 앱을 만드는 중급 수준입니다.
+            </p>
+            <p>
+              이 홈페이지는 제가 일하며 배운 것, 만들며 즐긴 것들을 한 곳에 모아두는 작은 작업실입니다.
+              같은 길을 걷는 분들께 작은 도움이 되면 좋겠습니다.
+            </p>
+            <div class="tag-wall about-menu" aria-label="작업실 안내">
+              <a href="#bid">입찰 이야기 — 나라장터 실무 경험과 팁</a>
+              <a href="#game">게임 만들기 — Unity와 C#으로 만든 게임들</a>
+              <a href="#downloads">엑셀 자동화 — 업무를 편하게 해주는 도구들</a>
+            </div>
+          </div>
+          <img class="about-logo" src="logo_t.png" alt="felizpapa 로고" />
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Projects</p>
+            <h2>내가 만든 프로그램</h2>
+          </div>
+          <a class="text-link" href="#contact">맞춤 개발 문의</a>
+        </div>
+        <div class="project-grid">
+          <article class="project-card featured">
+            <div class="project-topline">
+              <span class="status">대표 프로젝트</span>
+              <span>Public Bid AI</span>
+            </div>
+            <h3>나라장터 AI 분석 시스템</h3>
+            <p>
+              공고와 낙찰 데이터를 바탕으로 입찰 판단에 필요한 숫자를 정리하고, AI 추천과 통계 흐름을 함께 보여주는 분석 도구입니다.
+            </p>
+            <ul>
+              <li>공고 데이터 정리</li>
+              <li>낙찰률·사정률 분석</li>
+              <li>AI 추천값 계산</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span class="status">자동 수집</span>
+              <span>DATA</span>
+            </div>
+            <h3>DATA 자동 다운로드</h3>
+            <p>반복 조회와 엑셀 다운로드를 자동화해 여러 페이지의 자료를 빠르게 모으는 프로그램입니다.</p>
+            <ul>
+              <li>조건 입력 자동화</li>
+              <li>전체 페이지 반복</li>
+              <li>다운로드 폴더 정리</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span class="status">엑셀 도구</span>
+              <span>Excel</span>
+            </div>
+            <h3>엑셀 대용량 병합기</h3>
+            <p>여러 엑셀 파일을 하나로 합치고, 필요한 열만 정리해 업무용 자료로 바로 쓸 수 있게 만듭니다.</p>
+            <ul>
+              <li>대량 파일 병합</li>
+              <li>열 이름 자동 매칭</li>
+              <li>결과 파일 생성</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <div class="project-topline">
+              <span class="status">데이터 분석</span>
+              <span>Recommendation</span>
+            </div>
+            <h3>AI 추천 시스템</h3>
+            <p>업무 데이터를 바탕으로 후보값을 비교하고, 사람이 판단하기 쉽게 추천 결과와 근거를 정리합니다.</p>
+            <ul>
+              <li>추천 점수 계산</li>
+              <li>결과 요약</li>
+              <li>보고서 확장 가능</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section timeline-section" id="notes">
+        <div class="section-heading">
+          <p class="eyebrow">Lab Notes</p>
+          <h2>개발일지</h2>
+        </div>
+        <div class="timeline" aria-label="개발 이력">
+          <article>
+            <time datetime="2026-07">2026.07</time>
+            <div>
+              <h3>나라장터 AI V7 개발</h3>
+              <p>추천 계산 흐름과 화면 구성을 개선하고, 실제 업무 입력값이 분석 결과에 반영되도록 정리했습니다.</p>
+            </div>
+          </article>
+          <article>
+            <time datetime="2026-06">2026.06</time>
+            <div>
+              <h3>DATA 자동 다운로드 완성</h3>
+              <p>조건 선택, 전체 페이지 반복, 엑셀 다운로드 저장까지 이어지는 자동화 흐름을 구축했습니다.</p>
+            </div>
+          </article>
+          <article>
+            <time datetime="2026-05">2026.05</time>
+            <div>
+              <h3>몬테카를로 분석 추가</h3>
+              <p>입찰 분석에서 여러 가능성을 비교할 수 있도록 통계 기반 시뮬레이션 기능을 연구했습니다.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="workshop">
+        <div class="section-heading">
+          <p class="eyebrow">Workshop</p>
+          <h2>행복한아빠의 작업실</h2>
+        </div>
+
+        <h3 class="workshop-subtitle" id="bid">입찰 이야기</h3>
+        <p class="workshop-desc">
+          나라장터에서 입찰 업무를 하며 쌓은 경험을 정리하는 공간입니다. 여러 건의 낙찰을 받으며 몸으로 배운 것들,
+          처음 입찰하는 분들이 헷갈리기 쉬운 것들을 다룹니다. (특정 공고나 회사의 구체적인 정보는 다루지 않습니다.)
+        </p>
+        <div class="intro-grid workshop-grid">
+          <article>
+            <span class="status">준비 중</span>
+            <strong>나라장터 입찰, 처음이라면 이것부터</strong>
+            <p>준비 서류와 등록 절차를 처음 하는 분 눈높이에서 정리합니다.</p>
+          </article>
+          <article>
+            <span class="status">준비 중</span>
+            <strong>낙찰의 기본기 — 투찰가는 어떻게 정해지는가</strong>
+            <p>투찰가 산정의 기본 개념과 실무에서 주의할 점을 다룹니다.</p>
+          </article>
+          <article>
+            <span class="status">준비 중</span>
+            <strong>입찰에서 자주 하는 실수</strong>
+            <p>실제 경험에서 나온, 한 번의 실수로 입찰이 무효가 되는 사례들.</p>
+          </article>
+        </div>
+
+        <h3 class="workshop-subtitle" id="game">게임 만들기</h3>
+        <p class="workshop-desc">
+          Unity와 C#으로 게임 앱을 만드는 취미 개발자입니다. 퇴근 후 시간을 쪼개 하나씩 만들고 있습니다.
+          완성한 게임과 만드는 과정에서 배운 것들을 기록합니다.
+        </p>
+        <div class="intro-grid workshop-grid">
+          <article>
+            <span class="status">개발 중</span>
+            <strong>[게임 이름을 넣어 주세요]</strong>
+            <p>장르: [퍼즐 / 아케이드 등] — [이 게임은 ~하는 게임입니다. 한 줄 소개를 넣어 주세요]</p>
+          </article>
+          <article>
+            <span class="status">글감</span>
+            <strong>50대에 Unity를 배우면서 느낀 점</strong>
+            <p>늦게 시작한 프로그래밍, 그래도 즐거운 이유를 씁니다.</p>
+          </article>
+          <article class="game-placeholder-card">
+            <strong>📷 스크린샷 자리</strong>
+            <p>여기에 게임 화면 캡처를 넣을 예정입니다 (2~3장).</p>
+          </article>
+        </div>
+
+        <p class="workshop-desc" style="margin-top: 40px;">
+          ※ 엑셀 자동화 도구는 위의 '프로젝트'와 아래 '무료 다운로드'에서 소개합니다.
+          회사 자료가 들어간 파일은 데이터를 지우고 빈 양식만 공개합니다.
+        </p>
+      </section>
+
+      <section class="section" id="downloads">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Downloads</p>
+            <h2>무료 다운로드</h2>
+          </div>
+          <p class="section-note">처음 방문한 분도 바로 써볼 수 있는 작은 도구부터 공개합니다.</p>
+        </div>
+        <div class="download-list">
+          <div class="download-item" role="listitem" aria-label="엑셀 병합 프로그램 다운로드 준비중">
+            <span>엑셀 병합 프로그램</span>
+            <small>준비중</small>
+          </div>
+          <div class="download-item" role="listitem" aria-label="PDF 변환기 다운로드 준비중">
+            <span>PDF 변환기</span>
+            <small>준비중</small>
+          </div>
+          <div class="download-item" role="listitem" aria-label="크롤링 예제 다운로드 준비중">
+            <span>크롤링 예제</span>
+            <small>준비중</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section services-section" id="services">
+        <div class="section-heading">
+          <p class="eyebrow">Services</p>
+          <h2>필요한 프로그램을 실무 방식에 맞춰 제작합니다.</h2>
+        </div>
+        <div class="service-grid">
+          <article>
+            <h3>Python 자동화</h3>
+            <p>반복 클릭, 파일 정리, 데이터 수집, 보고서 생성 작업을 자동화합니다.</p>
+          </article>
+          <article>
+            <h3>엑셀 자동화</h3>
+            <p>VBA, 수식, 병합, 서식, 대용량 처리까지 업무 파일을 사용하기 쉽게 만듭니다.</p>
+          </article>
+          <article>
+            <h3>AI 분석</h3>
+            <p>GPT와 Claude를 활용해 요약, 분류, 추천, 검토 흐름을 프로그램에 연결합니다.</p>
+          </article>
+          <article>
+            <h3>입찰 데이터 연구</h3>
+            <p>나라장터, 낙찰률, 사정률, 통계 분석을 바탕으로 판단 자료를 정리합니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section blog-section" aria-labelledby="blog-title">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Blog</p>
+            <h2 id="blog-title">연구 주제</h2>
+          </div>
+          <a class="text-link" href="#contact">글 제안하기</a>
+        </div>
+        <div class="tag-wall" aria-label="블로그 주제">
+          <span>AI</span>
+          <span>Python</span>
+          <span>자동화</span>
+          <span>입찰</span>
+          <span>GPT</span>
+          <span>Claude</span>
+          <span>크롤링</span>
+          <span>엑셀</span>
+          <span>Unity</span>
+          <span>C#</span>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div class="contact-inner">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>반복업무를 줄이고 싶은 일이 있다면 편하게 문의해 주세요.</h2>
+            <p>
+              지금은 작은 자동화 도구부터 시작해도 좋습니다. 나중에는 프로그램 판매, 다운로드, 고객 지원,
+              교육 콘텐츠까지 자연스럽게 확장할 수 있습니다.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a class="contact-link" href="mailto:happydaddyjoon@gmail.com">
+              <span>이메일</span>
+              <strong>happydaddyjoon@gmail.com</strong>
+            </a>
+            <div class="contact-link" role="listitem" aria-label="카카오톡 문의 링크 준비중">
+              <span>카카오톡</span>
+              <strong>오픈채팅 연결 예정</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 행복한아빠 AI Lab. Python, AI, 데이터 분석, 공공입찰 자동화 연구소.</p>
+      <a href="#home">맨 위로</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
