@@ -938,6 +938,31 @@ img {
   outline: none;
 }
 
+/* 이메일 문의 — 대표 연락처 강조 */
+.contact-link--primary {
+  border-color: rgba(125, 198, 255, 0.55);
+  background: linear-gradient(135deg, rgba(11, 115, 224, 0.28), rgba(255, 255, 255, 0.06));
+}
+
+.contact-link--primary strong {
+  font-size: 19px;
+  letter-spacing: 0.2px;
+}
+
+.contact-link--primary em {
+  margin-top: 6px;
+  color: #a8bad0;
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.contact-link--primary:hover,
+.contact-link--primary:focus-visible {
+  border-color: #7dc6ff;
+  background: linear-gradient(135deg, rgba(11, 115, 224, 0.4), rgba(255, 255, 255, 0.1));
+}
+
 /* 고정 헤더에 제목이 가려지지 않도록 이동 위치 보정 */
 section[id],
 h3[id] {
