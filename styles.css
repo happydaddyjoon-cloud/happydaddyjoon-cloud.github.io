@@ -949,14 +949,6 @@ img {
   letter-spacing: 0.2px;
 }
 
-.contact-link--primary em {
-  margin-top: 6px;
-  color: #a8bad0;
-  font-size: 13px;
-  font-style: normal;
-  line-height: 1.5;
-}
-
 .contact-link--primary:hover,
 .contact-link--primary:focus-visible {
   border-color: #7dc6ff;
