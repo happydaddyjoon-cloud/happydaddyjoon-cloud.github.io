@@ -918,6 +918,108 @@ img {
   place-content: center;
 }
 
+/* 게임 만들기 — 스크린샷 쇼케이스 */
+.shot-figure {
+  margin: 26px 0 0;
+}
+
+.shot-figure img {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.shot-figure figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 15px;
+  text-align: center;
+}
+
+/* 무료 다운로드 — felizpapa Sans 서체 소개 */
+.font-feature {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 34px;
+  align-items: start;
+  margin-bottom: 34px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.font-feature img {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.font-feature-copy h3 {
+  margin: 14px 0 12px;
+  font-size: 26px;
+  font-weight: 850;
+}
+
+.font-feature-copy p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.font-feature-note {
+  font-size: 14px;
+}
+
+.font-install {
+  margin: 0 0 16px;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--quiet);
+}
+
+.font-install strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--navy, #183e66);
+}
+
+.font-install ol {
+  margin: 0 0 10px;
+  padding-left: 20px;
+  color: #3d4c5f;
+  font-size: 15px;
+}
+
+.font-install li {
+  margin-bottom: 6px;
+}
+
+.font-install .font-feature-note {
+  margin: 0;
+  font-size: 13px;
+}
+
+.font-feature a.download-item:hover,
+.font-feature a.download-item:focus-visible {
+  border-color: rgba(11, 115, 224, 0.46);
+  box-shadow: 0 12px 26px rgba(11, 115, 224, 0.12);
+  outline: none;
+}
+
+@media (max-width: 760px) {
+  .font-feature {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .font-feature img {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
 .about-menu a {
   display: inline-flex;
   align-items: center;
