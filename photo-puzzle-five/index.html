@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>포토퍼즐 파이브</title>
+  <style>
+    :root {
+      --blue: #3f75ff;
+      --coral: #ff6b57;
+      --gold: #ffd166;
+      --mint: #40d199;
+      --ink-light: #dbe7f7;
+      --panel: #16283f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: #ffffff;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      background:
+        radial-gradient(1100px 620px at 90% -8%, #1d4168 0%, transparent 62%),
+        radial-gradient(900px 520px at -12% 110%, #123254 0%, transparent 56%),
+        linear-gradient(160deg, #081525 0%, #0e2037 58%, #091627 100%);
+    }
+
+    .wrap {
+      width: min(1400px, 94%);
+      margin: auto;
+      padding: 56px 0 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .logo {
+      width: 180px;
+      margin: 0 0 18px -14px;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(42px, 4.6vw, 66px);
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 0 0 34px;
+      color: var(--ink-light);
+      font-size: 20px;
+      line-height: 1.75;
+    }
+
+    .pills {
+      display: grid;
+      gap: 14px;
+      max-width: 540px;
+      margin-bottom: 40px;
+    }
+
+    .pill {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 15px 20px;
+      border-radius: 14px;
+      color: #ffffff;
+      font-size: 19px;
+      font-weight: 850;
+      box-shadow: 0 10px 24px #0006;
+    }
+
+    .pill .num {
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #071321;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 850;
+    }
+
+    .pill.p1 {
+      background: linear-gradient(90deg, #3b5fd9, #4a86ff);
+    }
+
+    .pill.p2 {
+      background: linear-gradient(90deg, #f2604c, #ff7a62);
+    }
+
+    .pill.p3 {
+      color: #332606;
+      background: linear-gradient(90deg, #f1b93d, #ffd166);
+    }
+
+    .pill.p3 .num {
+      background: #332606;
+    }
+
+    .order-title {
+      margin: 0 0 16px;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .order {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 28px;
+      max-width: 540px;
+      margin-bottom: 30px;
+      color: var(--ink-light);
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .notice {
+      max-width: 540px;
+      padding: 14px 18px;
+      border: 1px solid #ffffff2e;
+      border-radius: 12px;
+      background: #ffffff10;
+      color: #e8eefb;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: 0.88fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .poster-frame {
+      overflow: hidden;
+      border: 8px solid #06101e;
+      border-radius: 30px;
+      background: #ffffff;
+      box-shadow: 0 28px 60px #000a;
+    }
+
+    .poster-frame img {
+      display: block;
+      width: 100%;
+      max-height: 760px;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .feature-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .feature-card {
+      padding: 24px 28px;
+      border: 1px solid #ffffff2b;
+      border-radius: 18px;
+      background: #ffffff0d;
+      backdrop-filter: blur(4px);
+    }
+
+    .feature-card h2 {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 25px;
+      line-height: 1.35;
+      font-weight: 900;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--ink-light);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .feature-card.accent h2 {
+      color: #89f0c4;
+    }
+
+    footer {
+      padding: 36px 0 40px;
+      text-align: center;
+      color: #8fa2bd;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #7db2ff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 980px) {
+      .grid,
+      .showcase {
+        grid-template-columns: 1fr;
+      }
+
+      .wrap {
+        padding-top: 36px;
+      }
+
+      .logo {
+        width: 140px;
+      }
+
+      .poster-frame img {
+        max-height: 720px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .order {
+        grid-template-columns: 1fr;
+      }
+
+      .pill {
+        font-size: 16px;
+      }
+
+      .feature-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img class="logo" src="../assets/felizpapa-header-logo.png" alt="Felizpapa 로고">
+        <h1>포토퍼즐<br>파이브</h1>
+        <p class="lead">
+          나만의 사진이 즐거운 퍼즐이 됩니다.<br>
+          갤러리 사진을 고르고, 난이도를 선택해 추억을 맞춰 보세요.
+        </p>
+
+        <div class="pills">
+          <div class="pill p1"><span class="num">1</span>갤러리에서 사진 선택</div>
+          <div class="pill p2"><span class="num">2</span>3×3부터 8×8까지 난이도 선택</div>
+          <div class="pill p3"><span class="num">3</span>사진 조각을 맞추며 완성</div>
+        </div>
+
+        <h2 class="order-title">사용 순서</h2>
+        <div class="order">
+          <span>1. 추억 사진 고르기</span>
+          <span>3. 퍼즐 조각 이동</span>
+          <span>2. 난이도 선택</span>
+          <span>4. 완성의 기쁨 느끼기</span>
+        </div>
+
+        <div class="notice">※ 직접 고른 사진으로 부담 없이 즐기는 개인 사진 퍼즐 게임입니다.</div>
+      </div>
+
+      <div class="showcase">
+        <div class="poster-frame">
+          <img src="../assets/photo-puzzle-five-poster.png" alt="포토퍼즐 파이브 앱 소개 포스터">
+        </div>
+
+        <div class="feature-stack">
+          <section class="feature-card">
+            <h2>내 사진 퍼즐</h2>
+            <p>앨범에 있는 사진을 바로 퍼즐로 바꿔, 가족 사진이나 추억 사진으로 게임을 즐길 수 있습니다.</p>
+          </section>
+          <section class="feature-card accent">
+            <h2>난이도 선택</h2>
+            <p>가볍게 즐기는 3×3부터 집중이 필요한 8×8까지, 상황에 맞는 난이도로 플레이합니다.</p>
+          </section>
+          <section class="feature-card">
+            <h2>추억을 맞추는 시간</h2>
+            <p>단순한 퍼즐을 넘어 사진 속 기억을 다시 떠올리며 완성하는 즐거움을 목표로 만든 앱입니다.</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>포토퍼즐 파이브 v1.0 · <a href="../">felizpapa.com 홈으로</a></footer>
+</body>
+</html>
