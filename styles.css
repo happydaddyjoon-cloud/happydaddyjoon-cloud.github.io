@@ -1005,6 +1005,12 @@ img {
   text-align: center;
 }
 
+.poster-figure img {
+  max-width: 420px;
+  margin: 0 auto;
+  display: block;
+}
+
 /* 무료 다운로드 — felizpapa Sans 서체 소개 */
 .font-feature {
   display: grid;
