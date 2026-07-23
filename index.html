@@ -1,449 +1,238 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="행복한아빠 AI Lab은 Python, AI, 데이터 분석, 공공입찰 자동화 프로그램을 연구하고 제작하는 AI 자동화 연구소입니다."
-    />
-    <title>행복한아빠 AI Lab | AI 업무자동화 연구소</title>
-    <link rel="icon" type="image/png" href="assets/logo-mark.png" />
-    <link rel="preload" as="image" href="assets/hero-ai-lab-sharp.png" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header" data-header>
-      <a class="brand" href="#home" aria-label="행복한아빠 AI Lab 홈">
-        <img class="brand-logo" src="assets/felizpapa-header-logo.png" alt="" />
-        <span>
-          <strong>행복한아빠 AI Lab</strong>
-          <small>Felizpapa Automation Studio</small>
-        </span>
-      </a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>행복한아빠의 디지털 작업실</title>
+  <meta name="description" content="직접 만들고, 업무에 적용하고, 경험을 기록합니다. 업무자동화, AI, 데이터 분석, 앱, 게임까지 직접 만들고 실제로 활용한 작업을 기록하는 개인 디지털 작업실입니다.">
+  <link rel="icon" type="image/png" href="assets/logo-mark.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-      <button class="nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" data-nav-toggle>
-        <span></span>
-        <span></span>
-      </button>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="행복한아빠의 디지털 작업실 홈">
+      <img src="assets/felizpapa-header-logo.png" alt="felizpapa 로고">
+      <span class="brand-text">
+        <strong>행복한아빠의 디지털 작업실</strong>
+        <small>직접 만들고, 업무에 적용하고, 경험을 기록합니다</small>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="메뉴 열기" data-nav-toggle><span></span><span></span></button>
+    <nav class="site-nav" data-nav>
+      <a href="index.html" class="active">홈</a>
+      <a href="work-projects.html">업무에 적용한 프로젝트</a>
+      <a href="creative-projects.html">앱·게임 프로젝트</a>
+      <a href="stories.html">기록과 이야기</a>
+      <a href="resources.html">무료 도구&amp;자료</a>
+      <a href="together.html">함께하기</a>
+      <a href="about.html">소개</a>
+    </nav>
+  </div>
+</header>
 
-      <nav class="site-nav" aria-label="주요 메뉴" data-nav>
-        <a href="#about">소개</a>
-        <a href="#projects">프로젝트</a>
-        <a href="#notes">개발일지</a>
-        <a href="#workshop">작업실</a>
-        <a href="#downloads">무료 프로그램</a>
-        <a href="#services">서비스</a>
-        <a href="#contact">문의</a>
-      </nav>
-    </header>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>직접 만들고,<br>업무에 적용하고,<br><span class="accent">경험을 기록합니다.</span></h1>
+      <p class="lead">업무자동화, AI, 데이터 분석, 앱, 게임까지<br>궁금한 것을 배우고 만들며 매일 성장하고 있습니다.</p>
+      <p class="desc">
+        이곳은 프로그램을 판매하거나 외주를 받기 위한 사이트가 아닙니다.
+        제가 만들고 실제로 사용하고 있는 다양한 프로젝트와 그 과정에서 얻은 경험을
+        기록하고 공유하는 개인 작업실입니다.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="work-projects.html">최근 프로젝트 보기</a>
+        <a class="btn btn-ghost" href="together.html">함께 이야기 나누기</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="assets/hero-ai-lab-sharp.png" alt="밝은 작업 공간에서 데이터를 다루는 모습">
+      <div class="hero-badges">
+        <span class="hero-badge b1"><span class="dot py">🐍</span> Python 업무자동화</span>
+        <span class="hero-badge b2"><span class="dot ai">🤖</span> AI · 데이터 분석</span>
+        <span class="hero-badge b3"><span class="dot game">🎮</span> 앱 · 게임 개발</span>
+        <span class="hero-badge b4"><span class="dot note">📝</span> 기록하고 공유하기</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <main id="home">
-      <section class="hero" aria-labelledby="hero-title">
-        <img class="hero-image" src="assets/hero-ai-lab-sharp.png" alt="AI 자동화 연구소 분위기의 밝은 업무 공간" onerror="this.style.display='none'" />
-        <div class="hero-overlay" aria-hidden="true"></div>
-        <div class="hero-content">
-          <p class="eyebrow">Python · AI · 데이터 분석 · 공공입찰</p>
-          <h1 id="hero-title">AI로 반복업무를<br />자동화합니다.</h1>
-          <p class="hero-copy">
-            사람이 하던 일을 프로그램이 대신하도록 만드는 것이 목표입니다. 공공입찰 분석부터 엑셀 자동화,
-            데이터 수집, AI 추천 시스템까지 실무에 바로 쓰이는 도구를 만듭니다.
-          </p>
-          <div class="hero-actions" aria-label="빠른 이동">
-            <a class="button primary" href="#projects">프로젝트 보기</a>
-            <a class="button secondary" href="#downloads">무료 프로그램</a>
-            <a class="button ghost" href="#contact">문의하기</a>
-          </div>
+<section class="section tint">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>지금 하고 있는 일</h2>
+      <p>업무에 필요한 도구를 만들고, 더 나은 방법을 찾아 적용합니다.</p>
+    </div>
+    <div class="now-grid">
+      <article class="now-card">
+        <div class="now-icon i1">🤖</div>
+        <h3>업무자동화 &amp; 데이터 분석</h3>
+        <ul><li>나라장터 데이터 수집·분석</li><li>엑셀 자동화·대량 데이터 처리</li><li>보고서 자동 생성</li></ul>
+        <a class="card-link" href="work-projects.html">관련 프로젝트 보기</a>
+      </article>
+      <article class="now-card">
+        <div class="now-icon i2">🎮</div>
+        <h3>앱 &amp; 게임 개발</h3>
+        <ul><li>모바일 앱 개발</li><li>게임 개발 (Unity)</li><li>데스크톱 프로그램</li></ul>
+        <a class="card-link" href="creative-projects.html">관련 프로젝트 보기</a>
+      </article>
+      <article class="now-card">
+        <div class="now-icon i3">📝</div>
+        <h3>기록 &amp; 나누기</h3>
+        <ul><li>개발 과정과 학습 기록</li><li>업무 경험과 노하우</li><li>배운 것을 정리하고 공유</li></ul>
+        <a class="card-link" href="stories.html">글 보러가기</a>
+      </article>
+      <article class="now-card">
+        <div class="now-icon i4">🎁</div>
+        <h3>무료 도구 &amp; 자료</h3>
+        <ul><li>직접 만든 프로그램 배포</li><li>무료 폰트 (felizpapa Sans)</li><li>필요한 분들과 자유롭게 공유</li></ul>
+        <a class="card-link" href="resources.html">다운로드 하기</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head left">
+      <div>
+        <h2>최근 프로젝트</h2>
+        <p>실제 업무에 적용한 도구부터 취미로 만든 앱·게임까지 기록합니다.</p>
+      </div>
+      <a class="link-more" href="work-projects.html">전체 보기</a>
+    </div>
+    <div class="project-grid">
+      <article class="project-card">
+        <div class="project-thumb"><img src="assets/bid-desk-summary.jpg" alt="Bid Desk 입찰 자동화"></div>
+        <div class="project-body">
+          <span class="project-tag auto">업무자동화</span>
+          <h3 style="margin-top:10px">Bid Desk — 입찰목록 수집·분석 자동화</h3>
+          <p>나라장터 등 5개 조달 시스템의 공고를 통합 수집·분석하고 A값 검증·Excel 저장까지 처리하는 도구입니다.</p>
+          <span class="project-date">현재 업무에 사용 중</span>
         </div>
-      </section>
-
-      <section class="trust-strip" aria-label="핵심 분야">
-        <span>공공입찰 AI</span>
-        <span>업무자동화</span>
-        <span>Python 프로그램 개발</span>
-        <span>데이터 분석</span>
-      </section>
-
-      <section class="section" id="about">
-        <div class="section-heading">
-          <p class="eyebrow">About</p>
-          <h2>안녕하세요, '행복한아빠'입니다.</h2>
+      </article>
+      <article class="project-card">
+        <div class="project-thumb"><img src="assets/adventure-game-poster.jpg" alt="어드벤처 모험"></div>
+        <div class="project-body">
+          <span class="project-tag creative">앱·게임</span>
+          <h3 style="margin-top:10px">어드벤처 모험 (Unity)</h3>
+          <p>Poppy와 강아지 Pudding이 숲·폭포·동굴을 탐험하는 Unity 게임입니다.</p>
+          <span class="project-date">개발 중</span>
         </div>
-        <div class="about-grid">
-          <div class="about-copy">
-            <p>
-              낮에는 나라장터(국가종합전자조달)에서 입찰 업무를 하는 직장인이고, 저녁에는 Python과 AI로
-              업무 자동화를 연구하고 Unity로 게임을 만드는 취미 개발자입니다. 입찰은 여러 건의 낙찰 경험이 있고,
-              프로그래밍은 JAVA, C#, C++ 등으로 게임 앱을 만드는 초급 이상의 수준입니다.
-            </p>
-            <p>
-              이 홈페이지는 제가 일하며 배운 것, 만들며 즐긴 것들을 한 곳에 모아두는 작은 작업실입니다.
-              같은 길을 걷는 분들께 작은 도움이 되면 좋겠습니다.
-            </p>
-            <div class="tag-wall about-menu" aria-label="작업실 안내">
-              <a href="#bid">입찰 이야기 — 나라장터 실무 경험과 팁</a>
-              <a href="#game">게임 만들기 — Unity와 C#으로 만든 게임들</a>
-              <a href="#downloads">엑셀 자동화 — 업무를 편하게 해주는 도구들</a>
-            </div>
-          </div>
-          <img class="about-logo" src="logo_t.png" alt="felizpapa 로고" />
+      </article>
+      <article class="project-card">
+        <div class="project-thumb"><img src="assets/photo-puzzle-five-poster.png" alt="포토퍼즐 파이브"></div>
+        <div class="project-body">
+          <span class="project-tag creative">앱·게임</span>
+          <h3 style="margin-top:10px">포토퍼즐 파이브</h3>
+          <p>내 사진으로 만드는 퍼즐 게임 (Windows). 3×3~8×8 난이도 지원.</p>
+          <span class="project-date">2026.07</span>
         </div>
-      </section>
+      </article>
+      <article class="project-card">
+        <div class="project-thumb"><img src="assets/lilac-chat-v1.jpg" alt="라일락 채팅"></div>
+        <div class="project-body">
+          <span class="project-tag creative">앱·게임</span>
+          <h3 style="margin-top:10px">라일락 채팅 (JAVA)</h3>
+          <p>10인 화상 채팅방을 JAVA로 구현한 데스크톱 프로그램입니다.</p>
+          <span class="project-date">v1.0 완성</span>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-thumb"><img src="assets/felizpapa-sans-poster.jpg" alt="felizpapa Sans 폰트"></div>
+        <div class="project-body">
+          <span class="project-tag tool">도구</span>
+          <h3 style="margin-top:10px">felizpapa Sans 폰트</h3>
+          <p>직접 만들어 무료 배포하는 한글 폰트 (Light·Regular·Bold).</p>
+          <span class="project-date">2026.07</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-      <section class="section" id="projects">
-        <div class="section-heading split">
-          <div>
-            <p class="eyebrow">Projects</p>
-            <h2>내가 만든 프로그램</h2>
-          </div>
-          <a class="text-link" href="#contact">맞춤 개발 문의</a>
-        </div>
-        <div class="project-grid">
-          <article class="project-card featured">
-            <div class="project-topline">
-              <span class="status">대표 프로젝트</span>
-              <span>Public Bid AI</span>
-            </div>
-            <h3>나라장터 AI 분석 시스템</h3>
-            <p>
-              공고와 낙찰 데이터를 바탕으로 입찰 판단에 필요한 숫자를 정리하고, AI 추천과 통계 흐름을 함께 보여주는 분석 도구입니다.
-            </p>
-            <ul>
-              <li>공고 데이터 정리</li>
-              <li>낙찰률·사정률 분석</li>
-              <li>AI 추천값 계산</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <div class="project-topline">
-              <span class="status">자동 수집</span>
-              <span>DATA</span>
-            </div>
-            <h3>DATA 자동 다운로드</h3>
-            <p>반복 조회와 엑셀 다운로드를 자동화해 여러 페이지의 자료를 빠르게 모으는 프로그램입니다.</p>
-            <ul>
-              <li>조건 입력 자동화</li>
-              <li>전체 페이지 반복</li>
-              <li>다운로드 폴더 정리</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <div class="project-topline">
-              <span class="status">엑셀 도구</span>
-              <span>Excel</span>
-            </div>
-            <h3>엑셀 대용량 병합기</h3>
-            <p>여러 엑셀 파일을 하나로 합치고, 필요한 열만 정리해 업무용 자료로 바로 쓸 수 있게 만듭니다.</p>
-            <ul>
-              <li>대량 파일 병합</li>
-              <li>열 이름 자동 매칭</li>
-              <li>결과 파일 생성</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <div class="project-topline">
-              <span class="status">데이터 분석</span>
-              <span>Recommendation</span>
-            </div>
-            <h3>AI 추천 시스템</h3>
-            <p>업무 데이터를 바탕으로 후보값을 비교하고, 사람이 판단하기 쉽게 추천 결과와 근거를 정리합니다.</p>
-            <ul>
-              <li>추천 점수 계산</li>
-              <li>결과 요약</li>
-              <li>보고서 확장 가능</li>
-            </ul>
-          </article>
-          <article class="project-card">
-            <div class="project-topline">
-              <span class="status">모바일 앱</span>
-              <span>Mobile</span>
-            </div>
-            <h3>나라장터 AI 낙찰 예측 모바일</h3>
-            <p>나라장터 공공데이터를 가져오고, 첨부한 낙찰데이터를 AI로 분석해 입찰대장 엑셀까지 만드는 모바일 입찰 업무 앱입니다.</p>
-            <ul>
-              <li>공공데이터 API 수집</li>
-              <li>낙찰자료 첨부·AI 분석</li>
-              <li>입찰대장 Excel 생성</li>
-            </ul>
-            <a class="text-link" href="nara-ai-mobile/" style="margin-top: 18px;">앱 소개 보기</a>
-          </article>
-          <article class="project-card puzzle-card">
-            <div class="project-copy">
-              <div class="project-topline">
-                <span class="status">게임 앱</span>
-                <span>Photo Puzzle Five</span>
-              </div>
-              <h3>포토퍼즐 파이브</h3>
-              <p>
-                기본 이미지 27장과 갤러리 사진을 3×3부터 8×8까지의 반응형 슬라이딩 퍼즐로 즐기는 Android 앱입니다.
-              </p>
-              <ul>
-                <li>기본 이미지 27장</li>
-                <li>갤러리 사진 선택</li>
-                <li>4:3 퍼즐판 자동 맞춤</li>
-              </ul>
-              <a class="text-link" href="photo-puzzle-five/" style="margin-top: 18px;">앱 소개 보기</a>
-            </div>
-            <a class="project-poster-link" href="photo-puzzle-five/" aria-label="포토퍼즐 파이브 앱 소개 페이지 열기">
-              <figure class="project-poster">
-                <img src="assets/photo-puzzle-five-poster.png" alt="포토퍼즐 파이브 앱 소개 이미지" loading="lazy">
-              </figure>
-            </a>
-          </article>
-        </div>
-      </section>
+<section class="section tint">
+  <div class="wrap">
+    <div class="triple">
+      <div class="panel">
+        <h3>🤝 함께하고 싶은 사람</h3>
+        <p>비슷한 관심과 생각을 가진 분들과 이야기 나누고, 배우고, 가능하다면 함께 새로운 것을 만들고 싶습니다.</p>
+        <ul class="check-list">
+          <li>업무를 더 편하게 만들고 싶은 분</li>
+          <li>자동화·AI·데이터에 관심 있는 분</li>
+          <li>앱·게임·프로그램을 좋아하는 분</li>
+          <li>함께 배우고 성장하고 싶은 분</li>
+        </ul>
+        <a class="btn btn-primary" href="together.html">함께하기로 이동</a>
+      </div>
+      <div class="panel">
+        <h3>📰 최신 글</h3>
+        <ul class="post-list">
+          <li><div class="post-thumb">🎮</div><div class="post-info"><h4><a href="stories.html">50대에 Unity를 배우면서 느낀 점</a></h4><p>늦은 시작이지만, 새로운 것을 배우는 즐거움에 대해.</p><span class="date">2026.07</span></div></li>
+          <li><div class="post-thumb">💰</div><div class="post-info"><h4><a href="posts/bid-price-basics.html">낙찰의 기본기 — 투찰가는 어떻게 정해지는가</a></h4><p>투찰가 산정의 기본 개념과 실무 주의점.</p><span class="date">2026.07</span></div></li>
+          <li><div class="post-thumb">⚠️</div><div class="post-info"><h4><a href="posts/bid-common-mistakes.html">입찰에서 자주 하는 실수 — 무효가 되는 3가지</a></h4><p>한 번의 실수로 무효가 되는 사례와 예방법.</p><span class="date">2026.07</span></div></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>ℹ️ 이 사이트는</h3>
+        <p class="about-quote">이곳은 외주 제작이나 프로그램 판매를 위한 사이트가 아닙니다. <b>직접 만들고, 업무에 적용하고, 경험을 기록하는</b> 개인 작업실입니다.</p>
+        <p class="about-quote" style="margin-top:14px">같은 뜻을 가진 분들과 생각을 나누고 함께 성장하고 싶습니다.</p>
+        <a class="card-link" href="about.html" style="display:inline-block;margin-top:12px;color:var(--blue);font-weight:700">소개 더 보기 →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <section class="section timeline-section" id="notes">
-        <div class="section-heading">
-          <p class="eyebrow">Lab Notes</p>
-          <h2>개발일지</h2>
-        </div>
-        <div class="timeline" aria-label="개발 이력">
-          <article>
-            <time datetime="2026-07">2026.07</time>
-            <div>
-              <h3>어드벤처 모험 — Unity 게임 개발 시작</h3>
-              <p>빨강 머리 소녀 주인공과 강아지가 숲속 마을·신비의 폭포·비밀의 동굴을 탐험하는 Unity 게임을 개발 중입니다. 캐릭터 콘셉트와 세계관, 탐험·수집·발견·우정의 핵심 재미를 잡았습니다.</p>
-            </div>
-          </article>
-          <article>
-            <time datetime="2026-07">2026.07</time>
-            <div>
-              <h3>포토퍼즐 파이브 앱 소개 페이지 적용</h3>
-              <p>기본 이미지 27장, 갤러리 사진 선택, 3×3~8×8 난이도, 4:3 퍼즐판 자동 맞춤 기능을 소개 페이지에 정리했습니다.</p>
-            </div>
-          </article>
-          <article>
-            <time datetime="2026-07">2026.07</time>
-            <div>
-              <h3>라일락 채팅 v1.0 완성 — JAVA 화상 채팅 프로그램</h3>
-              <p>로그인·대기실·서버 관리·최대 10인 화상 채팅방을 갖춘 데스크톱 화상 채팅 프로그램을 JAVA로 완성했습니다. 캐릭터 선택, 채팅방 목록, 화면 녹화 표시 등 실사용 기능까지 구현했습니다.</p>
-            </div>
-          </article>
-          <article>
-            <time datetime="2026-07">2026.07</time>
-            <div>
-              <h3>나라장터 AI V7 개발</h3>
-              <p>추천 계산 흐름과 화면 구성을 개선하고, 실제 업무 입력값이 분석 결과에 반영되도록 정리했습니다.</p>
-            </div>
-          </article>
-          <article>
-            <time datetime="2026-06">2026.06</time>
-            <div>
-              <h3>DATA 자동 다운로드 완성</h3>
-              <p>조건 선택, 전체 페이지 반복, 엑셀 다운로드 저장까지 이어지는 자동화 흐름을 구축했습니다.</p>
-            </div>
-          </article>
-          <article>
-            <time datetime="2026-05">2026.05</time>
-            <div>
-              <h3>몬테카를로 분석 추가</h3>
-              <p>입찰 분석에서 여러 가능성을 비교할 수 있도록 통계 기반 시뮬레이션 기능을 연구했습니다.</p>
-            </div>
-          </article>
-        </div>
-      </section>
+<section class="section">
+  <div class="wrap">
+    <div class="cta-banner">
+      <div>
+        <h3>같은 방향을 바라보는 분들의 이야기를 기다립니다.</h3>
+        <p>프로젝트에 대한 의견, 비슷한 경험, 아이디어, 응원의 글 무엇이든 좋습니다.</p>
+      </div>
+      <a class="btn btn-primary" href="together.html">함께 이야기 나누기</a>
+    </div>
+  </div>
+</section>
 
-      <section class="section" id="workshop">
-        <div class="section-heading">
-          <p class="eyebrow">Workshop</p>
-          <h2>행복한아빠의 작업실</h2>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>행복한아빠의 디지털 작업실</strong>
+        <p>직접 만들고, 업무에 적용하고, 경험을 기록합니다.<br>© 2026 felizpapa.com All rights reserved.</p>
+      </div>
+      <div class="footer-col">
+        <h4>바로가기</h4>
+        <a href="work-projects.html">업무에 적용한 프로젝트</a>
+        <a href="creative-projects.html">앱·게임 프로젝트</a>
+        <a href="stories.html">기록과 이야기</a>
+        <a href="resources.html">무료 도구·자료</a>
+      </div>
+      <div class="footer-col">
+        <h4>함께하기</h4>
+        <a href="together.html">글 남기기</a>
+        <a href="about.html">사이트 소개</a>
+      </div>
+      <div class="footer-col">
+        <h4>소셜 &amp; 연락</h4>
+        <div class="footer-social">
+          <a href="https://github.com/happydaddyjoon-cloud" target="_blank" rel="noreferrer" aria-label="GitHub">🐙</a>
+          <a href="mailto:felizpapajoon@gmail.com" aria-label="이메일">✉</a>
         </div>
+        <a href="mailto:felizpapajoon@gmail.com" style="margin-top:10px">felizpapajoon@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>이곳은 저의 작업실이자 놀이터입니다. 언제든 편하게 들러 이야기를 남겨주세요.</span>
+      <span>오늘도 행복한 하루 되세요 :)</span>
+    </div>
+  </div>
+</footer>
 
-        <h3 class="workshop-subtitle" id="bid">입찰 이야기</h3>
-        <p class="workshop-desc">
-          나라장터에서 입찰 업무를 하며 쌓은 경험을 정리하는 공간입니다. 여러 건의 낙찰을 받으며 몸으로 배운 것들,
-          처음 입찰하는 분들이 헷갈리기 쉬운 것들을 다룹니다. (특정 공고나 회사의 구체적인 정보는 다루지 않습니다.)
-        </p>
-        <div class="intro-grid workshop-grid">
-          <article>
-            <span class="status">제1편 공개</span>
-            <strong>나라장터 입찰, 처음이라면 이것부터</strong>
-            <p>입찰참가자격등록, 공동인증서, 입찰자 본인확인 등 준비 서류와 등록 절차를 실무자 눈높이에서 정리했습니다.</p>
-            <a class="text-link" href="posts/nara-bid-guide-1.html">글 읽기</a>
-          </article>
-          <article>
-            <span class="status">제2편 공개</span>
-            <strong>낙찰의 기본기 — 투찰가는 어떻게 정해지는가</strong>
-            <p>투찰가 산정의 기본 개념과 실무에서 주의할 점을 다룹니다.</p>
-            <a class="text-link" href="posts/bid-price-basics.html">글 읽기</a>
-          </article>
-          <article>
-            <span class="status">제3편 공개</span>
-            <strong>입찰에서 자주 하는 실수</strong>
-            <p>실제 경험에서 나온, 한 번의 실수로 입찰이 무효가 되는 사례들.</p>
-            <a class="text-link" href="posts/bid-common-mistakes.html">글 읽기</a>
-          </article>
-        </div>
 
-        <h3 class="workshop-subtitle" id="game">게임 만들기</h3>
-        <p class="workshop-desc">
-          Unity·C#으로 게임을, JAVA로 프로그램을 만드는 취미 개발자입니다. 퇴근 후 시간을 쪼개 하나씩 만들고 있습니다.
-          완성한 작품과 만드는 과정에서 배운 것들을 기록합니다.
-        </p>
-        <div class="intro-grid workshop-grid">
-          <article>
-            <span class="status">개발 중</span>
-            <strong>어드벤처 모험 — Unity 게임</strong>
-            <p>"세상은 넓고, 모험은 끝이 없어!" 빨강 머리 소녀와 강아지가 숲속 마을, 신비의 폭포, 비밀의 동굴을 탐험하는 Unity 게임입니다.</p>
-          </article>
-          <article>
-            <span class="status">v1.0 완성</span>
-            <strong>라일락 채팅 — JAVA 화상 채팅 프로그램</strong>
-            <p>로그인·대기실·서버 관리부터 최대 10인 화상 채팅방까지, JAVA로 직접 구현한 데스크톱 프로그램입니다.</p>
-          </article>
-          <article>
-            <span class="status">글 공개</span>
-            <strong>50대에 Unity를 배우면서 느낀 점</strong>
-            <p>늦게 시작한 프로그래밍, 그래도 즐거운 이유를 씁니다.</p>
-            <a class="text-link" href="posts/unity-learning-at-50.html">글 읽기</a>
-          </article>
-        </div>
-
-        <figure class="shot-figure poster-figure">
-          <img src="assets/adventure-game-poster.jpg" alt="어드벤처 모험 게임 포스터 — 빨강 머리 소녀 주인공과 강아지, 탐험·수집·발견·우정" loading="lazy">
-          <figcaption><strong>어드벤처 모험</strong> · Unity로 제작 중인 탐험 게임 (탐험 · 수집 · 발견 · 우정)</figcaption>
-        </figure>
-
-        <figure class="shot-figure">
-          <img src="assets/lilac-chat-v1.jpg" alt="라일락 채팅 실행 화면 — 로그인, 대기실, 서버 관리, 10인 화상 채팅방" loading="lazy">
-          <figcaption><strong>라일락 채팅 v1.0</strong> · JAVA로 구현한 화상 채팅 프로그램 — 로그인, 대기실, 서버 관리, 10인 화상 채팅 화면</figcaption>
-        </figure>
-
-        <p class="workshop-desc" style="margin-top: 40px;">
-          ※ 엑셀 자동화 도구는 위의 '프로젝트'와 아래 '무료 다운로드'에서 소개합니다.
-          회사 자료가 들어간 파일은 데이터를 지우고 빈 양식만 공개합니다.
-        </p>
-      </section>
-
-      <section class="section" id="downloads">
-        <div class="section-heading split">
-          <div>
-            <p class="eyebrow">Downloads</p>
-            <h2>무료 다운로드</h2>
-          </div>
-          <p class="section-note">처음 방문한 분도 바로 써볼 수 있는 작은 도구부터 공개합니다.</p>
-        </div>
-        <div class="font-feature">
-          <img src="assets/felizpapa-sans-poster.jpg" alt="felizpapa Sans 서체 소개 포스터" loading="lazy">
-          <div class="font-feature-copy">
-            <span class="status">무료 배포</span>
-            <h3>felizpapa Sans 서체</h3>
-            <p>
-              직접 제작한 한글 폰트 패밀리입니다. Light·Regular·Bold 3종, OpenType(OTF) 형식으로
-              한글·영문·숫자·특수문자를 지원합니다. 보고서, 프레젠테이션, 웹사이트 등 업무 환경 어디서나
-              무료로 사용할 수 있습니다.
-            </p>
-            <div class="font-install">
-              <strong>설치 방법</strong>
-              <ol>
-                <li>아래 ZIP 파일을 내려받아 압축을 완전히 풉니다.</li>
-                <li><b>INSTALL_OFFICIAL_FONT_FAMILY.cmd</b> 파일을 더블클릭합니다.</li>
-                <li>관리자 권한 창이 뜨면 "예"를 누릅니다.</li>
-                <li>Excel·Word·PowerPoint·한글(HWP)을 모두 닫았다가 다시 엽니다.</li>
-                <li>글꼴 입력칸에 <b>felizpapa Sans</b>를 입력해 사용합니다. (Light·Regular·Bold는 굵기 기능으로 선택)</li>
-              </ol>
-            </div>
-            <a class="download-item" href="downloads/FelizpapaSans_Official_FontFamily_v1_0.zip" download aria-label="felizpapa Sans 서체 무료 다운로드">
-              <span>felizpapa Sans v1.0 (설치 패키지)</span>
-              <small>ZIP · 무료 다운로드</small>
-            </a>
-          </div>
-        </div>
-
-        <div class="download-list">
-          <div class="download-item" role="listitem" aria-label="엑셀 병합 프로그램 다운로드 준비중">
-            <span>엑셀 병합 프로그램</span>
-            <small>준비중</small>
-          </div>
-          <div class="download-item" role="listitem" aria-label="PDF 변환기 다운로드 준비중">
-            <span>PDF 변환기</span>
-            <small>준비중</small>
-          </div>
-          <div class="download-item" role="listitem" aria-label="크롤링 예제 다운로드 준비중">
-            <span>크롤링 예제</span>
-            <small>준비중</small>
-          </div>
-        </div>
-      </section>
-
-      <section class="section services-section" id="services">
-        <div class="section-heading">
-          <p class="eyebrow">Services</p>
-          <h2>필요한 프로그램을 실무에 맞춰, AI와 함께 만들어 갑니다.</h2>
-        </div>
-        <div class="service-grid">
-          <article>
-            <h3>Python 자동화</h3>
-            <p>반복 클릭, 파일 정리, 데이터 수집, 보고서 생성 작업을 자동화합니다.</p>
-          </article>
-          <article>
-            <h3>엑셀 자동화</h3>
-            <p>VBA, 수식, 병합, 서식, 대용량 처리까지 업무 파일을 사용하기 쉽게 만듭니다.</p>
-          </article>
-          <article>
-            <h3>AI 분석</h3>
-            <p>GPT와 Claude를 활용해 요약, 분류, 추천, 검토 흐름을 프로그램에 연결합니다.</p>
-          </article>
-          <article>
-            <h3>입찰 데이터 연구</h3>
-            <p>나라장터, 낙찰률, 사정률, 통계 분석을 바탕으로 판단 자료를 정리합니다.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section blog-section" aria-labelledby="blog-title">
-        <div class="section-heading split">
-          <div>
-            <p class="eyebrow">Blog</p>
-            <h2 id="blog-title">연구 주제</h2>
-          </div>
-          <a class="text-link" href="#contact">글 제안하기</a>
-        </div>
-        <div class="tag-wall" aria-label="블로그 주제">
-          <span>AI</span>
-          <span>Python</span>
-          <span>자동화</span>
-          <span>입찰</span>
-          <span>GPT</span>
-          <span>Claude</span>
-          <span>크롤링</span>
-          <span>엑셀</span>
-          <span>Unity</span>
-          <span>C#</span>
-        </div>
-      </section>
-
-      <section class="contact-section" id="contact">
-        <div class="contact-inner">
-          <div>
-            <p class="eyebrow">Contact</p>
-            <h2>반복업무를 줄이고 싶은 일이 있다면 편하게 문의해 주세요.</h2>
-            <p>
-              지금은 작은 자동화 도구부터 시작해도 좋습니다. 나중에는 프로그램 판매, 다운로드, 고객 지원,
-              교육 콘텐츠까지 자연스럽게 확장할 수 있습니다.
-            </p>
-          </div>
-          <div class="contact-actions">
-            <a class="contact-link contact-link--primary" href="mailto:felizpapajoon@gmail.com?subject=%5Bfelizpapa.com%20%EB%AC%B8%EC%9D%98%5D%20">
-              <span>Business Inquiry · 이메일 문의</span>
-              <strong>✉ felizpapajoon@gmail.com</strong>
-            </a>
-            <div class="contact-link" role="listitem" aria-label="카카오톡 문의 링크 준비중">
-              <span>카카오톡</span>
-              <strong>오픈채팅 연결 예정</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <p>© 2026 행복한아빠 AI Lab. Python, AI, 데이터 분석, 공공입찰 자동화 연구소. · <a href="mailto:felizpapajoon@gmail.com">felizpapajoon@gmail.com</a></p>
-      <a href="#home">맨 위로</a>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
+<script src="script.js"></script>
+</body>
 </html>
-
