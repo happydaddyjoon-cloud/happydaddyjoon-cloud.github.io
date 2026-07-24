@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>라일락 채팅 — PC·모바일·웹을 하나로 잇는 감성 화상채팅</title>
+<style>
+  :root{ --pd:#5f35a7; --p:#8b57e8; --pink:#ef6c9c; --ink:#241c32; --muted:#675c74; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; color:var(--ink); font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif; line-height:1.7;
+    background:radial-gradient(circle at 12% 6%, #fff 0, transparent 360px), radial-gradient(circle at 94% 2%, rgba(255,205,224,.5) 0, transparent 380px), linear-gradient(150deg,#f4ecff 0%,#fff8fb 46%,#eef8ff 100%); }
+  a{ color:inherit; }
+  .wrap{ width:min(1080px,calc(100% - 36px)); margin:0 auto; }
+
+  header.hero{ position:relative; padding:40px 0 20px; }
+  .backbar{ display:flex; justify-content:space-between; align-items:center; }
+  .back{ display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:0 18px; border-radius:999px; color:var(--pd); background:#fff; border:1px solid #e5daf5; font-weight:800; text-decoration:none; }
+  .brand-row{ display:flex; align-items:center; gap:16px; margin-top:26px; }
+  .brand-row img{ width:64px; height:64px; object-fit:contain; }
+  .brand-row small{ display:block; color:#7b5aa8; font-weight:800; font-size:18px; }
+  .brand-row strong{ display:block; color:var(--pd); font-weight:900; font-size:40px; line-height:1.05; }
+  h1{ margin:26px 0 0; font-size:clamp(34px,6vw,60px); line-height:1.1; font-weight:900; letter-spacing:-1px; }
+  h1 b{ color:var(--p); }
+  .lead{ max-width:760px; margin:18px 0 0; color:var(--muted); font-size:21px; font-weight:600; }
+  .devices{ display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 0; }
+  .devices span{ padding:9px 20px; border-radius:999px; border:1px solid rgba(128,91,178,.24); background:rgba(255,255,255,.82); color:#5b3b8b; font-weight:900; font-size:17px; }
+
+  section{ margin-top:66px; }
+  h2{ text-align:center; font-size:clamp(26px,4vw,38px); color:var(--pd); font-weight:900; margin:0 0 6px; }
+  .sub{ text-align:center; color:var(--muted); font-size:18px; margin:0 auto 30px; max-width:640px; }
+
+  .platforms{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .platforms .card{ padding:28px 20px; border-radius:22px; background:rgba(255,255,255,.85); border:1px solid rgba(128,91,178,.16); text-align:center; box-shadow:0 16px 34px rgba(67,47,92,.07); }
+  .platforms .ic{ font-size:42px; }
+  .platforms b{ display:block; margin:12px 0 4px; color:var(--pd); font-size:20px; }
+  .platforms small{ color:#7f7290; font-size:15px; }
+
+  .feat{ display:grid; grid-template-columns:1.06fr 1fr; gap:32px; align-items:center; margin:26px 0; padding:24px; border-radius:26px; background:rgba(255,255,255,.85); border:1px solid rgba(128,91,178,.14); box-shadow:0 18px 40px rgba(67,47,92,.08); }
+  .feat:nth-of-type(even){ grid-template-columns:1fr 1.06fr; }
+  .feat:nth-of-type(even) .txt{ order:2; }
+  .feat img.shot{ width:100%; border-radius:16px; border:6px solid #fff; box-shadow:0 20px 44px rgba(67,47,92,.2); display:block; }
+  .feat .tag{ display:inline-block; margin-bottom:10px; padding:5px 14px; border-radius:999px; background:#f2e9ff; color:var(--p); font-weight:900; font-size:14px; }
+  .feat h3{ margin:0 0 8px; font-size:26px; color:var(--pd); font-weight:900; }
+  .feat p{ margin:0; color:#5c4e6e; font-size:17.5px; }
+
+  .special{ background:linear-gradient(160deg,#f3ecff,#fdeef4); }
+  .gifts{ display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin:20px 0 2px; }
+  .gifts figure{ margin:0; text-align:center; width:120px; }
+  .gifts img{ width:92px; height:92px; object-fit:contain; filter:drop-shadow(0 8px 14px rgba(90,60,130,.28)); }
+  .gifts figcaption{ margin-top:6px; font-weight:900; color:var(--pd); }
+
+  .mini{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:24px; }
+  .mini div{ padding:20px 22px; border-radius:18px; background:rgba(255,255,255,.85); border:1px solid rgba(128,91,178,.14); }
+  .mini b{ color:var(--pd); font-size:18px; }
+
+  .why{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:22px; }
+  .why div{ padding:20px 18px; border-radius:18px; background:rgba(255,255,255,.85); border:1px solid rgba(128,91,178,.14); text-align:center; }
+  .why .ic{ font-size:32px; }
+  .why b{ display:block; margin:8px 0 4px; color:var(--pd); }
+  .why small{ color:#7f7290; font-size:14px; }
+
+  .summarybox{ text-align:center; margin-top:40px; }
+  .summarybox img{ width:min(100%,940px); border-radius:22px; box-shadow:0 26px 64px rgba(74,45,120,.18); }
+
+  .cta-final{ margin:60px 0 20px; text-align:center; }
+  .cta-final .btn{ display:inline-block; padding:18px 44px; border-radius:999px; color:#fff; font-size:20px; font-weight:900; text-decoration:none; background:linear-gradient(135deg,#8354df,#ef6c9c); box-shadow:0 18px 34px rgba(142,84,205,.34); }
+
+  footer{ margin-top:56px; padding:36px 0; text-align:center; color:#8a7ba0; background:rgba(243,236,251,.7); }
+  footer .fl{ font-size:20px; font-weight:900; color:var(--pd); }
+
+  @media (max-width:760px){
+    .platforms,.why{ grid-template-columns:1fr 1fr; }
+    .feat,.feat:nth-of-type(even){ grid-template-columns:1fr; } .feat:nth-of-type(even) .txt{ order:0; }
+    .mini{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="backbar">
+      <a class="back" href="../creative-projects.html">← 앱·게임 프로젝트로</a>
+    </div>
+    <div class="brand-row">
+      <img src="img/logo.png" alt="라일락 채팅" />
+      <div><small>좋은 사람들과 좋은 이야기를</small><strong>라일락 채팅</strong></div>
+    </div>
+    <h1>PC·모바일·웹을 <b>하나로 잇는</b><br />감성 화상채팅</h1>
+    <p class="lead">앱을 따로 설치할 필요가 없습니다. 인터넷 주소만 열면 어떤 기기에서든 같은 대화방에서 얼굴을 보며 이야기할 수 있습니다.</p>
+    <div class="devices"><span>🖥️ PC</span><span>📱 모바일</span><span>🌐 웹</span><span>🎥 다자간 화상·음성</span><span>🔒 내 서버로 안전하게</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>하나의 주소로, 모든 기기에서</h2>
+    <p class="sub">PC든 휴대폰이든 태블릿이든, 브라우저만 있으면 바로 접속됩니다.</p>
+    <div class="platforms">
+      <div class="card"><div class="ic">🖥️</div><b>PC</b><small>크롬·엣지로 바로 접속</small></div>
+      <div class="card"><div class="ic">📱</div><b>모바일</b><small>안드로이드·아이폰, 설치 불필요</small></div>
+      <div class="card"><div class="ic">🌐</div><b>웹</b><small>주소만 열면 끝</small></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>핵심 기능</h2>
+    <p class="sub">화상채팅에 필요한 모든 것을 한 곳에 담았습니다.</p>
+
+    <div class="feat">
+      <div class="txt">
+        <span class="tag">화상 · 음성</span>
+        <h3>여러 명이 함께, 얼굴 보며 대화</h3>
+        <p>한 방에서 여러 사람이 동시에 영상·음성으로 대화합니다. 카메라가 없거나 얼굴을 가리고 싶을 땐 귀여운 <b>캐릭터 아바타</b>가 대신 나와 부담이 없고, 연결 품질도 실시간으로 표시됩니다.</p>
+      </div>
+      <img class="shot" src="img/videoroom.jpg" alt="화상채팅방 화면" />
+    </div>
+
+    <div class="feat">
+      <div class="txt">
+        <span class="tag">화면 공유</span>
+        <h3>내 화면을 그대로 보여주기</h3>
+        <p>발표 자료, 사진, 문서, 함께 보고 싶은 화면을 실시간으로 공유합니다. 온라인 수업, 회의, 취미 모임에 그대로 활용할 수 있습니다.</p>
+      </div>
+      <img class="shot" src="img/lobby.jpg" alt="대기실과 참여자 목록" />
+    </div>
+
+    <div class="feat">
+      <div class="txt">
+        <span class="tag">대화 · 파일</span>
+        <h3>문자, 귓속말, 이미지·동영상까지</h3>
+        <p>영상 대화 중에도 문자 채팅과 <b>귓속말</b>을 나누고, 이모티콘 300여 종과 이미지·GIF·동영상·파일을 끌어다 바로 보낼 수 있습니다.</p>
+      </div>
+      <img class="shot" src="img/chat.jpg" alt="대화 화면" />
+    </div>
+  </section>
+
+  <section>
+    <h2>✨ 라일락만의 특별한 감성 기능</h2>
+    <p class="sub">다른 화상채팅에는 없는, 마음을 전하는 아기자기한 기능들</p>
+
+    <div class="feat special">
+      <div class="txt">
+        <span class="tag">선물하기</span>
+        <h3>라일락 꽃 · 하트 · 커피를 선물</h3>
+        <p>마음에 드는 상대에게 선물을 보내면 방 안 모두의 화면에서 예쁜 연출이 펼쳐집니다. 꽃이 날아와 꽃잎으로 팡 터지고, 하트가 반짝이고, 따뜻한 커피에서 김이 모락모락 피어오릅니다.</p>
+        <div class="gifts">
+          <figure><img src="img/gift-flower.png" alt="꽃"><figcaption>라일락 꽃</figcaption></figure>
+          <figure><img src="img/gift-heart.png" alt="하트"><figcaption>사랑의 하트</figcaption></figure>
+          <figure><img src="img/gift-coffee.png" alt="커피"><figcaption>따뜻한 커피</figcaption></figure>
+        </div>
+      </div>
+      <img class="shot" src="img/gift.jpg" alt="선물 선택창" />
+    </div>
+
+    <div class="feat">
+      <div class="txt">
+        <span class="tag">쪽지 · 종이비행기</span>
+        <h3>손편지 감성 쪽지, 그리고 답장</h3>
+        <p>노란 포스트잇에 쪽지를 써서 보내면 <b>종이비행기가 날아가</b> 상대에게 전해집니다. 받은 쪽지에서 바로 답장도 할 수 있어요.</p>
+      </div>
+      <img class="shot" src="img/postit.jpg" alt="받은 쪽지와 답장" />
+    </div>
+
+    <div class="mini">
+      <div><b>🎬 영상 녹화</b><br />원하는 참여자의 영상을 소리와 함께 녹화(최대 10분).</div>
+      <div><b>👥 1:1 화상대화</b><br />마음 맞는 사람과 둘만의 화상·문자 대화.</div>
+      <div><b>🎵 배경음악 · 꽃잎 배경</b><br />잔잔한 피아노와 살랑이는 꽃잎이 대화를 감쌉니다.</div>
+      <div><b>👑 방장 · 서버 관리</b><br />방장 위임, 강퇴·차단, 서버별 설정까지.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>왜 라일락 채팅인가요?</h2>
+    <div class="why">
+      <div><div class="ic">🚀</div><b>설치 불필요</b><small>주소만 열면 바로 접속</small></div>
+      <div><div class="ic">🔒</div><b>내 서버로 안전</b><small>대화가 외부를 거치지 않음</small></div>
+      <div><div class="ic">🌸</div><b>감성 디자인</b><small>아늑한 화면과 다정한 연출</small></div>
+      <div><div class="ic">💬</div><b>다양한 소통</b><small>화상·문자·선물·쪽지까지</small></div>
+    </div>
+  </section>
+
+  <section class="summarybox">
+    <h2>한 장으로 보는 요약</h2>
+    <p class="sub">홈페이지에 그대로 넣을 수 있는 핵심 요약 이미지입니다.</p>
+    <img src="lilacchat-detail-summary.png" alt="라일락 채팅 핵심 기능 요약" />
+  </section>
+
+  <div class="cta-final">
+    <a class="btn" href="../creative-projects.html">앱·게임 프로젝트로 돌아가기 →</a>
+  </div>
+</main>
+
+<footer>
+  <img src="img/logo.png" alt="" style="width:40px;height:40px" /><br />
+  <span class="fl">라일락 채팅</span><br />좋은 사람들과, 좋은 이야기를
+</footer>
+
+</body>
+</html>
