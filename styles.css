@@ -324,3 +324,12 @@ img { display: block; max-width: 100%; }
 .gb-notice ul { margin: 0; padding-left: 18px; color: #46536a; font-size: 13.5px; }
 .gb-notice li { margin-bottom: 5px; }
 .gb-notice b { color: var(--blue-deep); }
+
+/* 방명록 — 페이지네이션 */
+.pager { display: flex; justify-content: center; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 26px; }
+.pager button { min-width: 38px; height: 38px; padding: 0 10px; border: 1px solid var(--line); background: #fff; border-radius: 9px; font-size: 14px; font-weight: 700; color: #40495a; cursor: pointer; transition: all .15s; }
+.pager button:hover:not(:disabled) { border-color: var(--blue); color: var(--blue-deep); }
+.pager button.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+.pager button:disabled { opacity: .4; cursor: default; }
+.pager .ellipsis { color: #9aa5b3; padding: 0 4px; }
+.gb-viewlink { display: flex; justify-content: center; margin-top: 22px; }

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>남겨주신 이야기 | 행복한아빠의 디지털 작업실</title>
+  <meta name="description" content="방문자들이 남겨주신 이야기 게시판입니다.">
+  <link rel="icon" type="image/png" href="assets/logo-mark.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="행복한아빠의 디지털 작업실 홈">
+      <img src="assets/felizpapa-header-logo.png" alt="felizpapa 로고">
+      <span class="brand-text">
+        <strong>행복한아빠의 디지털 작업실</strong>
+        <small>직접 만들고, 업무에 적용하고, 경험을 기록합니다</small>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-label="메뉴 열기" data-nav-toggle><span></span><span></span></button>
+    <nav class="site-nav" data-nav>
+      <a href="index.html">홈</a>
+      <a href="work-projects.html">업무에 적용한 프로젝트</a>
+      <a href="creative-projects.html">앱·게임 프로젝트</a>
+      <a href="stories.html">기록과 이야기</a>
+      <a href="resources.html">무료 도구&amp;자료</a>
+      <a href="together.html" class="active">함께하기</a>
+      <a href="about.html">소개</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-band">
+  <div class="wrap">
+    <p class="eyebrow">Guestbook</p>
+    <h1>남겨주신 이야기</h1>
+    <p>함께 배우고, 나누고, 만들어가고 싶은 분들이 남겨주신 이야기입니다.</p>
+  </div>
+</section>
+
+<main class="content"><div class="wrap">
+  <div class="gb-wrap" style="margin-top:0">
+    <div class="gb-head">
+      <span class="gb-count" id="gb-count"></span>
+      <a class="btn btn-primary" href="together.html" style="padding:9px 18px">✍ 글 남기기</a>
+    </div>
+
+    <div class="gb-notice">
+      <strong>📌 이용 안내</strong>
+      <ul>
+        <li>로그인 없이 자유롭게 글을 남길 수 있습니다.</li>
+        <li>내가 쓴 글은 <b>수정·삭제 버튼</b>이 보이며, <b>글을 쓴 그 브라우저·기기에서만</b> 수정·삭제할 수 있습니다.</li>
+        <li>브라우저 기록(쿠키·사이트 데이터)을 지우거나 다른 기기에서 접속하면, 이전에 쓴 글은 수정·삭제할 수 없으니 참고해 주세요.</li>
+        <li>욕설·광고·타인에게 불쾌감을 주는 글은 운영자가 삭제할 수 있습니다.</li>
+      </ul>
+    </div>
+
+    <div class="gb-mode" id="gb-mode" style="display:none"></div>
+    <div class="gb-list" id="gb-list"><div class="gb-empty">이야기를 불러오는 중…</div></div>
+    <div class="pager" id="gb-pager"></div>
+  </div>
+</div></main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>행복한아빠의 디지털 작업실</strong>
+        <p>직접 만들고, 업무에 적용하고, 경험을 기록합니다.<br>© 2026 felizpapa.com All rights reserved.</p>
+      </div>
+      <div class="footer-col">
+        <h4>바로가기</h4>
+        <a href="work-projects.html">업무에 적용한 프로젝트</a>
+        <a href="creative-projects.html">앱·게임 프로젝트</a>
+        <a href="stories.html">기록과 이야기</a>
+        <a href="resources.html">무료 도구·자료</a>
+      </div>
+      <div class="footer-col">
+        <h4>함께하기</h4>
+        <a href="together.html">글 남기기</a>
+        <a href="guestbook.html">남겨주신 이야기</a>
+        <a href="about.html">사이트 소개</a>
+      </div>
+      <div class="footer-col">
+        <h4>소셜 &amp; 연락</h4>
+        <div class="footer-social">
+          <a href="https://github.com/happydaddyjoon-cloud" target="_blank" rel="noreferrer" aria-label="GitHub">🐙</a>
+          <a href="mailto:felizpapajoon@gmail.com" aria-label="이메일">✉</a>
+        </div>
+        <a href="mailto:felizpapajoon@gmail.com" style="margin-top:10px">felizpapajoon@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>이곳은 저의 작업실이자 놀이터입니다. 언제든 편하게 들러 이야기를 남겨주세요.</span>
+      <span>오늘도 행복한 하루 되세요 :)</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+<script type="module">
+  import { firebaseConfig } from "./firebase-config.js";
+
+  const PAGE_SIZE = 20;
+  const listEl = document.getElementById("gb-list");
+  const countEl = document.getElementById("gb-count");
+  const modeEl = document.getElementById("gb-mode");
+  const pagerEl = document.getElementById("gb-pager");
+
+  const READY = firebaseConfig.projectId && !firebaseConfig.projectId.includes("여기에");
+  const esc = (s) => (s || "").replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+  const initial = (n) => (n || "?").trim().charAt(0).toUpperCase();
+  function when(ts) {
+    if (!ts) return "";
+    const d = new Date(ts), diff = (Date.now() - d.getTime()) / 1000;
+    if (diff < 60) return "방금 전";
+    if (diff < 3600) return Math.floor(diff/60) + "분 전";
+    if (diff < 86400) return Math.floor(diff/3600) + "시간 전";
+    return `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,"0")}.${String(d.getDate()).padStart(2,"0")}`;
+  }
+
+  let items = [], page = 1, myUid = null, previewMode = false, deleteItem, updateItem;
+
+  function entryHtml(it) {
+    const mine = previewMode || (myUid && it.uid && it.uid === myUid);
+    const actions = mine ? `
+      <span class="gb-actions">
+        <button class="gb-btn" data-edit="${it.id}">수정</button>
+        <button class="gb-btn del" data-del="${it.id}">삭제</button>
+      </span>` : "";
+    return `
+      <div class="gb-entry${mine ? " gb-mine" : ""}" data-id="${it.id}">
+        <div class="gb-entry-top">
+          <span class="gb-avatar">${esc(initial(it.name))}</span>
+          <span class="gb-name">${esc(it.name)}</span>
+          ${it.topic ? `<span class="gb-topic">${esc(it.topic)}</span>` : ""}
+          <span class="gb-date">${when(it.createdAt)}</span>
+          ${actions}
+        </div>
+        <p class="gb-msg">${esc(it.message)}</p>
+      </div>`;
+  }
+
+  function renderPage() {
+    const total = items.length;
+    const pages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+    if (page > pages) page = pages;
+    countEl.textContent = total ? `총 ${total}개` : "";
+    if (!total) {
+      listEl.innerHTML = '<div class="gb-empty">아직 남겨진 이야기가 없습니다. 첫 이야기를 남겨주세요 :)</div>';
+      pagerEl.innerHTML = ""; return;
+    }
+    const start = (page - 1) * PAGE_SIZE;
+    listEl.innerHTML = items.slice(start, start + PAGE_SIZE).map(entryHtml).join("");
+    renderPager(pages);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function renderPager(pages) {
+    if (pages <= 1) { pagerEl.innerHTML = ""; return; }
+    let html = `<button data-p="${page-1}" ${page===1?"disabled":""}>‹</button>`;
+    const win = 2;
+    const nums = [];
+    for (let i = 1; i <= pages; i++) {
+      if (i === 1 || i === pages || (i >= page - win && i <= page + win)) nums.push(i);
+      else if (nums[nums.length-1] !== "…") nums.push("…");
+    }
+    for (const n of nums) {
+      html += n === "…" ? `<span class="ellipsis">…</span>`
+        : `<button data-p="${n}" class="${n===page?"active":""}">${n}</button>`;
+    }
+    html += `<button data-p="${page+1}" ${page===pages?"disabled":""}>›</button>`;
+    pagerEl.innerHTML = html;
+  }
+
+  pagerEl.addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-p]"); if (!b) return;
+    const p = parseInt(b.dataset.p, 10);
+    if (!isNaN(p)) { page = p; renderPage(); }
+  });
+
+  listEl.addEventListener("click", async (e) => {
+    const editBtn = e.target.closest("[data-edit]");
+    const delBtn = e.target.closest("[data-del]");
+    if (editBtn) {
+      const id = editBtn.getAttribute("data-edit");
+      const it = items.find(x => x.id === id);
+      const box = listEl.querySelector(`.gb-entry[data-id="${id}"] .gb-msg`);
+      if (!it || !box || box.dataset.editing) return;
+      box.dataset.editing = "1";
+      box.outerHTML = `
+        <div class="gb-edit" data-editwrap="${id}">
+          <textarea>${esc(it.message)}</textarea>
+          <div class="gb-edit-btns">
+            <button class="btn btn-primary" data-save="${id}" style="padding:8px 16px">저장</button>
+            <button class="gb-btn" data-cancel="${id}">취소</button>
+          </div>
+        </div>`;
+    } else if (delBtn) {
+      if (!confirm("이 글을 삭제할까요?")) return;
+      await deleteItem(delBtn.getAttribute("data-del"));
+    } else if (e.target.matches("[data-cancel]")) {
+      renderPage();
+    } else if (e.target.matches("[data-save]")) {
+      const id = e.target.getAttribute("data-save");
+      const ta = listEl.querySelector(`[data-editwrap="${id}"] textarea`);
+      const v = (ta?.value || "").trim(); if (!v) return;
+      await updateItem(id, v);
+    }
+  });
+
+  const LS = "felizpapa_guestbook";
+  const lsLoad = () => { try { return JSON.parse(localStorage.getItem(LS)) || []; } catch { return []; } };
+  const lsSave = (a) => localStorage.setItem(LS, JSON.stringify(a));
+
+  if (!READY) {
+    myUid = "local"; previewMode = true;
+    modeEl.style.display = "block";
+    modeEl.textContent = "미리보기 모드입니다 — 지금은 이 브라우저에만 저장됩니다. Firebase를 연결하면 모든 방문자에게 공개되는 게시판이 됩니다.";
+    items = lsLoad().sort((a,b) => b.createdAt - a.createdAt); renderPage();
+    deleteItem = async (id) => { lsSave(lsLoad().filter(x => x.id !== id)); items = lsLoad().sort((a,b)=>b.createdAt-a.createdAt); renderPage(); };
+    updateItem = async (id, msg) => { const all = lsLoad(); const t = all.find(x=>x.id===id); if (t){t.message=msg;lsSave(all);} items = all.sort((a,b)=>b.createdAt-a.createdAt); renderPage(); };
+  } else {
+    const { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js");
+    const { getFirestore, collection, getDocs, doc, updateDoc, deleteDoc, query, orderBy, limit } =
+      await import("https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js");
+    const { getAuth, signInAnonymously, onAuthStateChanged } =
+      await import("https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js");
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app), auth = getAuth(app), col = collection(db, "guestbook");
+
+    async function load() {
+      const snap = await getDocs(query(col, orderBy("createdAt", "desc"), limit(1000)));
+      items = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      renderPage();
+    }
+    onAuthStateChanged(auth, (u) => { if (u) { myUid = u.uid; renderPage(); } });
+    signInAnonymously(auth).catch((e) => console.warn(e));
+    deleteItem = async (id) => {
+      try { await deleteDoc(doc(db, "guestbook", id)); await load(); }
+      catch (e) { alert("삭제할 수 없습니다. 본인이 쓴 글만 삭제할 수 있어요."); console.error(e); }
+    };
+    updateItem = async (id, msg) => {
+      try { await updateDoc(doc(db, "guestbook", id), { message: msg }); await load(); }
+      catch (e) { alert("수정할 수 없습니다. 본인이 쓴 글만 수정할 수 있어요."); console.error(e); }
+    };
+    load();
+  }
+</script>
+</body>
+</html>
