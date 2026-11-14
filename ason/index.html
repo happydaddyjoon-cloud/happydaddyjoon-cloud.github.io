@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AS On — UPS·정류기·축전지 AS 접수·진행 안내 | 행복한아빠의 디지털 작업실</title>
+  <link rel="icon" type="image/png" href="../assets/logo-mark.png">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .as-band { background: linear-gradient(135deg,#12305a,#0b1f3d); color:#fff; padding:44px 0 40px; }
+    .as-band .back { display:inline-flex; padding:8px 16px; border-radius:999px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.25); font-weight:700; font-size:14px; }
+    .as-band h1 { margin:22px 0 8px; font-size:clamp(30px,4vw,44px); font-weight:900; }
+    .as-band h1 span { color:#f5a300; }
+    .as-band p { margin:0; color:#c8d6ea; font-size:17px; max-width:760px; }
+    .as-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+    .as-tags span { padding:6px 14px; border-radius:999px; background:rgba(245,163,0,.15); border:1px solid rgba(245,163,0,.4); color:#ffd27a; font-size:14px; font-weight:700; }
+    .slides { display:grid; gap:26px; max-width:1100px; margin:0 auto; }
+    .slides figure { margin:0; }
+    .slides img { width:100%; height:auto; border-radius:14px; border:1px solid var(--line); box-shadow:var(--shadow); background:#fff; }
+    .slides figcaption { margin-top:8px; text-align:center; color:var(--muted); font-size:14px; }
+  </style>
+</head>
+<body>
+
+<section class="as-band">
+  <div class="wrap">
+    <a class="back" href="../work-projects.html">← 업무에 적용한 프로젝트로</a>
+    <h1>AS <span>On</span> — 서비스 소개 · 사용 가이드</h1>
+    <p>UPS · 정류기 · 축전지 AS를 고객 접수부터 업무 처리, 담당자 알림, 고객 진행 조회까지 하나의 흐름으로 연결하는 AS 접수·진행 안내 서비스입니다.</p>
+    <div class="as-tags"><span>휴대폰·PC 접수</span><span>진행 단계 관리</span><span>텔레그램 알림</span><span>고객 진행 조회</span><span>AS 이력 관리</span></div>
+  </div>
+</section>
+
+<main class="content"><div class="wrap">
+  <div class="slides" id="slides"></div>
+  <p style="text-align:center;margin-top:34px"><a class="btn btn-primary" href="../work-projects.html">업무에 적용한 프로젝트로 돌아가기 →</a></p>
+</div></main>
+
+<script>
+  const caps = ["표지","서비스 가치","연결된 업무 흐름","고객 경험","한 번 설치","브라우저 설치","두 가지 서비스 방식","진행 관리","고객 진행 조회","관리자 데스크","작업 · 출고","텔레그램 알림","텔레그램 메시지 범위","AS 이력 관리","시연","마무리"];
+  document.getElementById("slides").innerHTML = caps.map((c,i) => {
+    const n = String(i+1).padStart(2,"0");
+    return `<figure><img src="slides/s-${n}.jpg" alt="AS On 소개 ${n} — ${c}" loading="lazy"><figcaption>${n} / 16 · ${c}</figcaption></figure>`;
+  }).join("");
+</script>
+</body>
+</html>
